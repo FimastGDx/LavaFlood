@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="GNU General Public License version 3 (GPLv3)"
+
+[[mods]]
+modId="lavaflood"
+version="1.0.0"
+displayName="LavaFlood"
+credits="Created using mod "
+displayURL="https://github.com/FimastGDx/LavaFlood"
+logoFile="logo.png"
+authors="FimastGD"
+description='''
+The lava is rising!
+'''
+
+[[dependencies.lavaflood]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

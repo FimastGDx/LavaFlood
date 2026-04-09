@@ -1,0 +1,70 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 204,
+    "height": 112,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Select the time in seconds",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Select the time in seconds",
+          "x": 147,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "for the lava to rise 1 level on the Y axis.",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "for the lava to rise 1 level on the Y axis.",
+          "x": 110,
+          "y": 85
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "60",
+          "width": 57,
+          "height": 20,
+          "name": "Seconds",
+          "x": 184,
+          "y": 113
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "START",
+          "width": 51,
+          "height": 20,
+          "name": "START",
+          "x": 188,
+          "y": 146
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

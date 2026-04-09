@@ -1,0 +1,213 @@
+{
+  "mod_elements": [
+    {
+      "name": "MainGui",
+      "type": "gui",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "main_gui",
+      "path": "~/GUI"
+    },
+    {
+      "name": "RunLavaFlooding",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "run_lava_flooding",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "RunWithoutLavaFlooding",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "run_without_lava_flooding",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "StartGui",
+      "type": "gui",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "start_gui",
+      "path": "~/GUI"
+    },
+    {
+      "name": "Init",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "init",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "LavafloodModPackets",
+      "type": "code",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lavaflood_mod_packets",
+      "path": "~/Classes"
+    },
+    {
+      "name": "LavaFloodStartPacket",
+      "type": "code",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lava_flood_start_packet",
+      "path": "~/Classes"
+    },
+    {
+      "name": "LavaFloodSyncPacket",
+      "type": "code",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lava_flood_sync_packet",
+      "path": "~/Classes"
+    },
+    {
+      "name": "LavaFloodHandler",
+      "type": "code",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lava_flood_handler",
+      "path": "~/Classes"
+    },
+    {
+      "name": "LavaFloodClientData",
+      "type": "code",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lava_flood_client_data",
+      "path": "~/Classes"
+    },
+    {
+      "name": "LavaFloodHudOverlay",
+      "type": "code",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lava_flood_hud_overlay",
+      "path": "~/Classes"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "LavaFlooding",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "GUI",
+        "children": []
+      },
+      {
+        "name": "Functions",
+        "children": []
+      },
+      {
+        "name": "Classes",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "lavaflood",
+    "modName": "LavaFlood",
+    "version": "1.0.0",
+    "description": "The lava is rising!",
+    "author": "FimastGD",
+    "websiteURL": "https://github.com/FimastGDx/LavaFlood",
+    "license": "GNU General Public License version 3 (GPLv3)",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "modPicture": "lavaflood",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod ",
+    "modElementsPackage": "net.fimastgd.lavaflood",
+    "lockBaseModFiles": true
+  },
+  "mcreatorVersion": 202200234517
+}
