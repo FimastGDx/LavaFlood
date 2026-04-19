@@ -20,7 +20,7 @@ import java.util.*;
 @Mod.EventBusSubscriber(modid = "lavaflood")
 public class LavaFloodHandler {
 
-    // state
+    // internal state fields
     private static boolean active = false;
     private static int centerX, centerZ;
     private static int intervalTicks; // ticks between layers
@@ -40,7 +40,7 @@ public class LavaFloodHandler {
             Blocks.BROWN_CONCRETE, Blocks.GREEN_CONCRETE,
             Blocks.RED_CONCRETE, Blocks.BLACK_CONCRETE));
 
-    // Public API
+    // public API
 
     /**
      * Called from {@link net.fimastgd.lavaflood.network.LavaFloodStartPacket}
@@ -56,7 +56,7 @@ public class LavaFloodHandler {
         ticksUntilNext = 1; // fill first layer next tick
         active = true;
 
-        // Set world border: 250 blocks diameter centred on player
+        // set world border: 250 blocks diameter centred on player
         WorldBorder border = level.getWorldBorder();
         border.setCenter(centerX + 0.5, centerZ + 0.5);
         border.setSize(250);
@@ -76,14 +76,14 @@ public class LavaFloodHandler {
         broadcastSync();
     }
 
-    /** Полная остановка флуда */
+    /** full stop of the flood */
     public static void stop() {
         active = false;
         if (serverLevel != null)
             broadcastSync();
     }
 
-    // Server tick
+    // server tick
 
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
@@ -92,7 +92,7 @@ public class LavaFloodHandler {
         if (!active || serverLevel == null)
             return;
 
-        // finished?
+        // check if finished
         if (currentY >= maxY) {
             active = false;
             broadcastSync();
@@ -107,7 +107,7 @@ public class LavaFloodHandler {
             ticksUntilNext--;
         }
 
-        // sync HUD to clients every second
+        // sync hud to clients every second
         if (ticksUntilNext % 20 == 0) {
             broadcastSync();
         }
@@ -120,14 +120,14 @@ public class LavaFloodHandler {
         if (!(event.getPlayer() instanceof ServerPlayer sp))
             return;
 
-        // сразу шлём актуальное состояние только этому игроку
+        // send current state to this player immediately
         int secsLeft = ticksUntilNext / 20;
         LavafloodModPackets.CHANNEL.send(
                 net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp),
                 new LavaFloodSyncPacket(active, currentY - 1, secsLeft));
     }
 
-    // Layer fill
+    // layer fill
 
     /**
      * Fills one Y-layer with lava inside the 250×250 area, respecting:
@@ -138,7 +138,7 @@ public class LavaFloodHandler {
      * </ul>
      */
     private static void fillLayer(int y) {
-        // Берём актуальные параметры из границы мира, а не из захардкоженных полей
+        // get actual parameters from world border, not from hardcoded fields
         WorldBorder border = serverLevel.getWorldBorder();
         int x1 = (int) border.getMinX();
         int z1 = (int) border.getMinZ();
